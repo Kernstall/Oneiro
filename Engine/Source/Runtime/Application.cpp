@@ -36,7 +36,7 @@ namespace oe::Runtime
 	{
 	}
 
-	void Application::OnEvent(const oe::Core::Event::Base& e)
+	void Application::OnEvent(const Core::Event::Base& e)
 	{
 	}
 

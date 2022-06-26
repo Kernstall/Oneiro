@@ -113,7 +113,8 @@ namespace SandBox
 
     void Application::OnEvent(const oe::Core::Event::Base& e)
     {
-        if (typeid(e) == typeid(oe::Core::Event::CursorPosEvent)) {
+        if (typeid(e) == typeid(oe::Core::Event::CursorPosEvent))
+        {
             const auto& cursorEvent =
                 dynamic_cast<const oe::Core::Event::CursorPosEvent&>(e);
             auto& mainCamera = mWorld->GetEntity("Player").GetComponent<oe::MainCameraComponent>();

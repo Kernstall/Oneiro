@@ -20,7 +20,7 @@ namespace oe::Runtime
 		virtual bool OnInit();
 		virtual bool OnUpdate(float deltaTime);
 		virtual void OnShutdown();
-		virtual void OnEvent(const oe::Core::Event::Base& e);
+		virtual void OnEvent(const Core::Event::Base& e);
 
 	    [[nodiscard]] Core::Window* GetWindow() const;
 		[[nodiscard]] bool IsStopped() const;
