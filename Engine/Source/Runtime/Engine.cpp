@@ -120,18 +120,7 @@ namespace oe::Runtime
 		using namespace Core;
 		Event::Dispatcher::Subscribe<Event::FrameBufferSizeEvent>([](const Event::Base& e)
 		{
-			const auto& resizeEvent =
-				dynamic_cast<const Event::FrameBufferSizeEvent&>(e);
-			if (resizeEvent.Width > 0 ||
-				resizeEvent.Height > 0)
-			{
-				Root::GetWindow()->UpdateSize(
-					resizeEvent.Width,
-					resizeEvent.Height);
-				Renderer::GL::Viewport(
-					resizeEvent.Width,
-					resizeEvent.Height);
-			}
+				Root::GetApplication()->OnEvent(e);
 		});
 
 		Event::Dispatcher::Subscribe<Event::KeyInputEvent>([](const Event::Base& e)
