@@ -120,21 +120,6 @@ namespace SandBox
             auto& mainCamera = mWorld->GetEntity("Player").GetComponent<oe::MainCameraComponent>();
             mainCamera.UpdateMouse(static_cast<float>(cursorEvent.XPos), static_cast<float>(cursorEvent.YPos));
         }
-        if (typeid(e) == typeid(oe::Core::Event::FrameBufferSizeEvent))
-        {
-            const auto& resizeEvent =
-                dynamic_cast<const oe::Core::Event::FrameBufferSizeEvent&>(e);
-            if (resizeEvent.Width > 0 ||
-                resizeEvent.Height > 0)
-            {
-                oe::Core::Root::GetWindow()->UpdateSize(
-                    resizeEvent.Width,
-                    resizeEvent.Height);
-                oe::Renderer::GL::Viewport(
-                    resizeEvent.Width,
-                    resizeEvent.Height);
-            }
-        }
     }
 
     void Application::OnShutdown()
